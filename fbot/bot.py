@@ -6,6 +6,7 @@ import logging
 class Bot(Client):
     def __init__(self, email, pswd, usr=None, mx=5, ssn=None, log=logging.INFO):
         super(Bot, self).__init__(email, pswd, usr, mx, ssn, log)
+        self.email = email
         self.userOnline = False
         self.AID = None
         self.Message = None

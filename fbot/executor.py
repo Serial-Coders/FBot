@@ -5,17 +5,19 @@ Commands = {
         '.Start': (Start, 'A'),
         '.Stop': (Stop, 'A'),
         '.Exit': (Exit, 'A'),
+        '.Email': (Email, 'AU'),
         }
 
 
 def executeCommand(bot):
+    cmd = bot.Message.split()[0]
     try:
-        if Commands[bot.Message][1] == 'A' and bot.uid != bot.AID:
+        if Commands[cmd][1] == 'A' and bot.uid != bot.AID:
             raise KeyError
-        Commands[bot.Message][0](bot)
+        Commands[cmd][0](bot)
     except KeyError as e:
         if bot.uid == bot.AID:
-            if bot.Message not in Commands and time() - bot.Time < 20:
+            if cmd not in Commands and time() - bot.Time < 20:
                 return None
             bot.Time = time()
             bot.sendMessage('Sorry, Master that command was unknown, following commands are known', bot.ThID, bot.ThType)
