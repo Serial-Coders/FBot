@@ -20,6 +20,7 @@ def Stop(bot):
         bot.sendMessage(Message['AlreadyStopped'], bot.ThID, bot.ThType)
 
 def buildIn_Unavailable(bot):
+    bot.Time = time()
     bot.sendMessage(Message['Unavailable'], bot.ThID, bot.ThType)
 
 def Exit(bot):
@@ -29,8 +30,8 @@ def Exit(bot):
 
 def Email(bot):
     bot.Time = time()
-    emailID = 'anonymousstark1@gmail.com'
-    passWd = 'nonewsisgoodnews'
+    emailID = '<emailHere>'
+    passWd = '<passherer>'
     msg = bot.Message[7:]
 
     emailMsg = EmailMessage()

@@ -30,3 +30,4 @@ def executeCommand(bot):
             for key in Commands:
                 if 'U' in Commands[key][1]:
                     bot.sendMessage(key, bot.ThID, bot.ThType)
+            bot.Time = time()
